@@ -11,15 +11,15 @@ enum SlideStatus {
 }
 
 /// 滑动完成UI组件
-class SlideDone extends StatefulWidget {
+class SlideDoneNS extends StatefulWidget {
   // 宽
   final double width;
   // 高
   final double height;
   // 滑动框形状
-  final ShapeBorder shape;
+  final ShapeBorder? shape;
   // 按钮形状
-  final ShapeBorder buttonShape;
+  final ShapeBorder? buttonShape;
   // 滑动框高度
   final double elevation;
   // 滑动按钮高度
@@ -31,16 +31,16 @@ class SlideDone extends StatefulWidget {
   // 结束颜色
   final Color endColor;
   // 开始图标
-  final Widget startIcon;
+  final Widget? startIcon;
   // 结束图标
-  final Widget endIcon;
+  final Widget? endIcon;
   // 开始完成图标
-  final Widget startedIcon;
+  final Widget? startedIcon;
   // 结束完成图标
-  final Widget endedIcon;
+  final Widget? endedIcon;
   // 加载视图
-  final Widget startLoadWidget;
-  final Widget endLoadWidget;
+  final Widget? startLoadWidget;
+  final Widget? endLoadWidget;
   // 开始文字
   final Widget startText;
   final Widget startingText;
@@ -50,22 +50,22 @@ class SlideDone extends StatefulWidget {
   final Widget endingText;
   final Widget endedText;
   // 开始和结束回调
-  final OnStart onStart;
-  final OnEnd onEnd;
+  final OnStart? onStart;
+  final OnEnd? onEnd;
   // 初始化状态
   final SlideStatus status;
   // 内边距
   final double padding;
   // 填充视图(滑动时的空白区域)
-  final Widget startFillView;
-  final Widget endFillView;
+  final Widget? startFillView;
+  final Widget? endFillView;
   // 完成延时
   final int startedDelay;
   final int endedDelay;
 
   // 构造函数
-  SlideDone({
-    Key key,
+  SlideDoneNS({
+    Key? key,
     this.width = 250.0,
     this.height = 60.0,
     this.shape,
@@ -88,7 +88,7 @@ class SlideDone extends StatefulWidget {
     this.endedDelay = 1000,
     this.startText = const Text("Right slide on",
       style: TextStyle(
-        fontSize: 20.0
+          fontSize: 20.0
       ),
     ),
     this.startingText = const Text("Turn on...",
@@ -122,17 +122,17 @@ class SlideDone extends StatefulWidget {
   }): super(key: key);
 
   @override
-  SlideDoneState createState() => SlideDoneState();
+  SlideDoneNSState createState() => SlideDoneNSState();
 }
-class SlideDoneState extends State<SlideDone> with TickerProviderStateMixin<SlideDone>{
+class SlideDoneNSState extends State<SlideDoneNS> with TickerProviderStateMixin<SlideDoneNS>{
   // 状态
-  SlideStatus _status;
+  late SlideStatus _status;
   // 滑动范围
-  double _slideRange;
+  late double _slideRange;
   // 滑动距离
-  double _slideDistance;
+  late double _slideDistance;
   // 上一个点
-  double _lastOffsetX;
+  late double _lastOffsetX;
   // 是否怎在加载
   bool _isLoad = false;
   // 是否需要改变状态(用于动画过程中判断)
@@ -140,8 +140,8 @@ class SlideDoneState extends State<SlideDone> with TickerProviderStateMixin<Slid
   // 是否加载结束等待中
   bool _isLoadedWaiting = false;
   // 动画控制
-  Animation<double> _animation;
-  AnimationController _animationController;
+  late Animation<double> _animation;
+  late AnimationController _animationController;
 
   // 初始化
   @override
@@ -232,7 +232,7 @@ class SlideDoneState extends State<SlideDone> with TickerProviderStateMixin<Slid
         _status = SlideStatus.START;
         _isLoad = true;
       });
-      await widget.onStart();
+      await widget.onStart!();
       setState(() {
         _isLoad = false;
         _isLoadedWaiting = true;
@@ -259,7 +259,7 @@ class SlideDoneState extends State<SlideDone> with TickerProviderStateMixin<Slid
         _status = SlideStatus.END;
         _isLoad = true;
       });
-      await widget.onEnd();
+      await widget.onEnd!();
       _isLoad = false;
       setState(() {
         _isLoad = false;
@@ -312,47 +312,47 @@ class SlideDoneState extends State<SlideDone> with TickerProviderStateMixin<Slid
           children: <Widget>[
             // 结束文字
             new Container(
-              width: widget.width - widget.padding * 2,
-              height: widget.height - widget.padding * 2,
-              child: Container(
-                margin: EdgeInsets.only(right: widget.height - widget.padding * 2 + (_slideRange - _slideDistance)),
-                child: Stack(
-                  children: <Widget>[
-                    Positioned(
-                      child: Container(
-                        width: widget.width - widget.padding - widget.height,
-                        height: widget.height - widget.padding * 2,
-                        child: Center(
-                          child: endText,
+                width: widget.width - widget.padding * 2,
+                height: widget.height - widget.padding * 2,
+                child: Container(
+                  margin: EdgeInsets.only(right: widget.height - widget.padding * 2 + (_slideRange - _slideDistance)),
+                  child: Stack(
+                    children: <Widget>[
+                      Positioned(
+                        child: Container(
+                          width: widget.width - widget.padding - widget.height,
+                          height: widget.height - widget.padding * 2,
+                          child: Center(
+                            child: endText,
+                          ),
                         ),
-                      ),
-                      right: -(_slideRange - _slideDistance),
-                    )
-                  ],
-                ),
-              )
+                        right: -(_slideRange - _slideDistance),
+                      )
+                    ],
+                  ),
+                )
             ),
             // 开始文字
             new Container(
-              width: widget.width - widget.padding * 2,
-              height: widget.height - widget.padding * 2,
-              child: Container(
-                margin: EdgeInsets.only(left: widget.height - widget.padding * 2 + _slideDistance),
-                child: Stack(
-                  children: <Widget>[
-                    Positioned(
-                      child: Container(
-                        width: widget.width - widget.padding - widget.height,
-                        height: widget.height - widget.padding * 2,
-                        child: Center(
-                          child: startText,
+                width: widget.width - widget.padding * 2,
+                height: widget.height - widget.padding * 2,
+                child: Container(
+                  margin: EdgeInsets.only(left: widget.height - widget.padding * 2 + _slideDistance),
+                  child: Stack(
+                    children: <Widget>[
+                      Positioned(
+                        child: Container(
+                          width: widget.width - widget.padding - widget.height,
+                          height: widget.height - widget.padding * 2,
+                          child: Center(
+                            child: startText,
+                          ),
                         ),
-                      ),
-                      left: -_slideDistance,
-                    )
-                  ],
-                ),
-              )
+                        left: -_slideDistance,
+                      )
+                    ],
+                  ),
+                )
             ),
             // 滑动按钮
             new Container(
@@ -360,36 +360,36 @@ class SlideDoneState extends State<SlideDone> with TickerProviderStateMixin<Slid
               width: widget.height - widget.padding * 2,
               height: widget.height - widget.padding * 2,
               child: Card(
-                clipBehavior: Clip.hardEdge,
-                elevation: widget.buttonElevation,
-                margin: EdgeInsets.all(0.0),
-                color: iconColor,
-                shape: widget.buttonShape ?? RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular((widget.height - widget.padding * 2) / 2))
-                ),
-                child: GestureDetector(
-                  onHorizontalDragStart: (details){
-                    if (_isLoad || _animationController.isAnimating) return;
-                    _lastOffsetX = details.globalPosition.dx;
-                  },
-                  onHorizontalDragUpdate: (details){
-                    if (_isLoad || _animationController.isAnimating) return;
-                    _onSlide(details.globalPosition.dx);
-                  },
-                  onHorizontalDragEnd: (details){
-                    if (_isLoad || _animationController.isAnimating) return;
-                    // 滑动结束,启动动画
-                    _startAnimation();
-                  },
-                  // 为按钮添加水波纹
-                  child: InkWell(
-                    onTap: (){},
-                    borderRadius: BorderRadius.all(Radius.circular((widget.height - widget.padding * 2) / 2)),
-                    child: Center(
-                      child: icon,
-                    ),
+                  clipBehavior: Clip.hardEdge,
+                  elevation: widget.buttonElevation,
+                  margin: EdgeInsets.all(0.0),
+                  color: iconColor,
+                  shape: widget.buttonShape ?? RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular((widget.height - widget.padding * 2) / 2))
                   ),
-                )
+                  child: GestureDetector(
+                    onHorizontalDragStart: (details){
+                      if (_isLoad || _animationController.isAnimating) return;
+                      _lastOffsetX = details.globalPosition.dx;
+                    },
+                    onHorizontalDragUpdate: (details){
+                      if (_isLoad || _animationController.isAnimating) return;
+                      _onSlide(details.globalPosition.dx);
+                    },
+                    onHorizontalDragEnd: (details){
+                      if (_isLoad || _animationController.isAnimating) return;
+                      // 滑动结束,启动动画
+                      _startAnimation();
+                    },
+                    // 为按钮添加水波纹
+                    child: InkWell(
+                      onTap: (){},
+                      borderRadius: BorderRadius.all(Radius.circular((widget.height - widget.padding * 2) / 2)),
+                      child: Center(
+                        child: icon,
+                      ),
+                    ),
+                  )
               ),
             ),
           ],
@@ -424,12 +424,12 @@ class SlideDoneState extends State<SlideDone> with TickerProviderStateMixin<Slid
     }else {
       if (_isLoad) {
         return widget.endLoadWidget ?? SizedBox(
-          width: 25.0,
-          height: 25.0,
-          child: CircularProgressIndicator(
-            strokeWidth: 3.0,
-            valueColor: AlwaysStoppedAnimation(Colors.white),
-          )
+            width: 25.0,
+            height: 25.0,
+            child: CircularProgressIndicator(
+              strokeWidth: 3.0,
+              valueColor: AlwaysStoppedAnimation(Colors.white),
+            )
         );
       }else if (_isLoadedWaiting) {
         return widget.endedIcon ?? Icon(Icons.done,
@@ -507,10 +507,10 @@ class SlideDoneState extends State<SlideDone> with TickerProviderStateMixin<Slid
           return widget.startColor;
         }else {
           return Color.fromRGBO(
-            widget.startColor.red + ((1 - scale) * (widget.endColor.red - widget.startColor.red)).floor(),
-            widget.startColor.green + ((1 - scale) * (widget.endColor.green - widget.startColor.green)).floor(),
-            widget.startColor.blue + ((1 - scale) * (widget.endColor.blue - widget.startColor.blue)).floor(),
-            widget.startColor.opacity + (1 - scale) * (widget.endColor.opacity - widget.startColor.opacity)
+              widget.startColor.red + ((1 - scale) * (widget.endColor.red - widget.startColor.red)).floor(),
+              widget.startColor.green + ((1 - scale) * (widget.endColor.green - widget.startColor.green)).floor(),
+              widget.startColor.blue + ((1 - scale) * (widget.endColor.blue - widget.startColor.blue)).floor(),
+              widget.startColor.opacity + (1 - scale) * (widget.endColor.opacity - widget.startColor.opacity)
           );
         }
       }
