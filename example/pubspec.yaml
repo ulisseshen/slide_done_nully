@@ -20,7 +20,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.4
   url_launcher: ^6.0.18
-  silde_done_ns:
+  slide_done_ns:
     path: ../
 
 dev_dependencies:
