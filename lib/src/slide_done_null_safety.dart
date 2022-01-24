@@ -11,7 +11,7 @@ enum SlideStatus {
 }
 
 /// 滑动完成UI组件
-class SlideDoneNullSafety extends StatefulWidget {
+class SlideDoneNS extends StatefulWidget {
   // 宽
   final double width;
   // 高
