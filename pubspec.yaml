@@ -1,11 +1,11 @@
-name: flutter_slide_done
+name: silde_done_ns
 description: Flutter widget, slide to finish.
-version: 0.0.1
-author: xuelongqy <xuelongqy@foxmail.com>
-homepage: https://github.com/xuelongqy/flutter_slide_done
+version: 1.0.0
+author: ulisseshen
+homepage: https://github.com/ulisseshen/flutter_slide_done_nullsafety
 
 environment:
-  sdk: ">=2.0.0-dev.68.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
   flutter: ">=0.1.4 <2.0.0"
 
 dependencies:

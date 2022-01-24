@@ -28,7 +28,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   // SlideDone key
-  GlobalKey<SlideDoneState> slideDoneKey = new GlobalKey<SlideDoneState>();
+  GlobalKey<SlideDoneNSState> slideDoneKey = new GlobalKey<SlideDoneNSState>();
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 0.5,
                   color: Colors.grey,
                 ),
-                SlideDone(
+                SlideDoneNS(
                   key: slideDoneKey,
                   onStart: () async {
                     await Future.delayed(Duration(seconds: 2), (){});
@@ -125,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 0.5,
                   color: Colors.grey,
                 ),
-                SlideDone(
+                SlideDoneNS(
                   endText: Text("It's done",
                     style: TextStyle(
                         fontSize: 20.0
@@ -167,7 +167,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 0.5,
                   color: Colors.grey,
                 ),
-                SlideDone(
+                SlideDoneNS(
                   elevation: 0.0,
                   buttonElevation: 0.0,
                   backgroundColor: Colors.black26,
@@ -204,7 +204,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 0.5,
                   color: Colors.grey,
                 ),
-                SlideDone(
+                SlideDoneNS(
                   width: 250.0,
                   height: 60.0,
                   padding: 3.0,
@@ -313,7 +313,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 0.5,
                   color: Colors.grey,
                 ),
-                SlideDone(
+                SlideDoneNS(
                   startText: Text("Get more",
                     style: TextStyle(
                         fontSize: 20.0

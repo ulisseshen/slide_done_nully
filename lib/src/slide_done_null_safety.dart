@@ -12,58 +12,51 @@ enum SlideStatus {
 
 /// 滑动完成UI组件
 class SlideDoneNS extends StatefulWidget {
-  // 宽
+
   final double width;
-  // 高
+
   final double height;
-  // 滑动框形状
+
   final ShapeBorder? shape;
-  // 按钮形状
+
   final ShapeBorder? buttonShape;
-  // 滑动框高度
+
   final double elevation;
-  // 滑动按钮高度
   final double buttonElevation;
-  // 背景颜色
+
   final Color backgroundColor;
-  // 开始颜色
   final Color startColor;
-  // 结束颜色
   final Color endColor;
-  // 开始图标
+
   final Widget? startIcon;
-  // 结束图标
   final Widget? endIcon;
-  // 开始完成图标
   final Widget? startedIcon;
-  // 结束完成图标
   final Widget? endedIcon;
-  // 加载视图
+
   final Widget? startLoadWidget;
   final Widget? endLoadWidget;
-  // 开始文字
+
   final Widget startText;
   final Widget startingText;
   final Widget startedText;
-  // 结束文字
+
   final Widget endText;
   final Widget endingText;
   final Widget endedText;
-  // 开始和结束回调
+
   final OnStart? onStart;
   final OnEnd? onEnd;
-  // 初始化状态
+
   final SlideStatus status;
-  // 内边距
   final double padding;
-  // 填充视图(滑动时的空白区域)
+
   final Widget? startFillView;
   final Widget? endFillView;
-  // 完成延时
+
   final int startedDelay;
   final int endedDelay;
 
-  // 构造函数
+
   SlideDoneNS({
     Key? key,
     this.width = 250.0,
