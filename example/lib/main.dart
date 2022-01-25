@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_slide_done/slide_done.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:slide_done_ns/slide_done.dart';
 
 void main() => runApp(MyApp());
 
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -33,18 +32,18 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: ListView(
-        children: <Widget>[
-          _basicStyle(),
-          _justOpenStyle(),
-          _flatStyle(),
-          _customize(),
-          _more()
-        ],
-      )// This trailing comma makes auto-formatting nicer for build methods.
+        appBar: AppBar(
+          title: Text(widget.title),
+        ),
+        body: ListView(
+          children: <Widget>[
+            _basicStyle(),
+            _justOpenStyle(),
+            _flatStyle(),
+            _customize(),
+            _more()
+          ],
+        )// This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 
@@ -86,16 +85,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
                     FlatButton(
-                      onPressed: (){
-                        slideDoneKey.currentState.callOnStart();
-                      },
-                      child: Text("Start")
+                        onPressed: (){
+                          slideDoneKey.currentState!.callOnStart();
+                        },
+                        child: Text("Start")
                     ),
                     FlatButton(
-                      onPressed: (){
-                        slideDoneKey.currentState.callOnEnd();
-                      },
-                      child: Text("End")
+                        onPressed: (){
+                          slideDoneKey.currentState!.callOnEnd();
+                        },
+                        child: Text("End")
                     ),
                   ],
                 )
@@ -139,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onEnd: () async {
                     await Future.delayed(Duration(seconds: 2), (){});
                   },
-                  onStart: () {},
+                  onStart:null,
                 ),
               ],
             )
@@ -314,26 +313,26 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: Colors.grey,
                 ),
                 SlideDoneNS(
-                  startText: Text("Get more",
+                  startText: const Text("Get more",
                     style: TextStyle(
                         fontSize: 20.0
                     ),
                   ),
-                  endText: Text("QQ群:554981921",
+                  endText: const Text("QQ群:554981921",
                     style: TextStyle(
                         fontSize: 16.0
                     ),
                   ),
-                  endedIcon: Icon(Icons.done,
+                  endedIcon: const Icon(Icons.done,
                     color: Colors.white,
                   ),
                   endedText: Container(),
                   startedDelay: 0,
                   endedDelay: 0,
-                  onEnd: () {
-                    launch("mqqopensdkapi://bizAgent/qm/qr?url=http%3A%2F%2Fqm.qq.com%2Fcgi-bin%2Fqm%2Fqr%3Ffrom%3Dapp%26p%3Dandroid%26k%3DMNLtkvnn4n28UIB0gEgm2-WBmqmGWk0Q");
+                  onEnd: () async {
+                    // await launch("mqqopensdkapi://bizAgent/qm/qr?url=http%3A%2F%2Fqm.qq.com%2Fcgi-bin%2Fqm%2Fqr%3Ffrom%3Dapp%26p%3Dandroid%26k%3DMNLtkvnn4n28UIB0gEgm2-WBmqmGWk0Q");
                   },
-                  onStart: () {},
+                  onStart: null,
                 ),
               ],
             )
