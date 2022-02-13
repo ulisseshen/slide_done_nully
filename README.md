@@ -35,6 +35,14 @@ dependencies:
     git:
       url: https://github.com/ulisseshen/flutter_slide_done_nullsafety.git
       ref: master
+
+// package way
+dependencies:
+  slide_done_nully: ^0.0.2
+
+//don´t forget to run 
+flutter pub get
+
 ```
 #### 2.Add SlideDone to the layout file
 ```dart
