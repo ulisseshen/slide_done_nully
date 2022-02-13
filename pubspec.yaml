@@ -1,6 +1,6 @@
 name: slide_done_nully
 description: Flutter widget, slide to finish. SlideDone is inspired by sliding unlocking, which can be defined as a slide switch that can be unidirectional or bidirectional. You can customize the parameters of SlideDone to make it look what you want. Ideal para ser usado no seu projeto e proporcionar um visual satisfatório para o usuário. 
-version: 0.0.2
+version: 0.0.2+1
 author: xuelongqy
 editor: ulisseshen
 homepage: https://github.com/ulisseshen/flutter_slide_done_nullsafety
