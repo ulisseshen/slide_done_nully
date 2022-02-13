@@ -1,12 +1,13 @@
-name: slide_done_ns
+name: slide_done_nully
 description: Flutter widget, slide to finish.
-version: 1.0.0
-author: ulisseshen
+version: 0.0.2
+author: xuelongqy
+editor: ulisseshen
 homepage: https://github.com/ulisseshen/flutter_slide_done_nullsafety
+repository: https://github.com/ulisseshen/flutter_slide_done_nullsafety
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
-  flutter: ">=0.1.4 <2.0.0"
 
 dependencies:
   flutter:
