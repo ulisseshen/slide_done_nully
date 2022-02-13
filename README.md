@@ -67,6 +67,17 @@ import 'package:slide_done_nully/slide_done.dart';
   slideDoneKey.currentState.callOnEnd();
 ```
 
+#### 4.Add custom icons
+```dart
+  SlideDoneNS(
+    key: slideDoneKey,
+    startIcon: Icon(Icons.keyboard_arrow_right),
+    endIcon:Icon(Icons.keyboard_arrow_left),
+    startedIcon: Icon(Icons.done),
+    endedIcon:  Icon(Icons.done)
+  ),
+```
+
 # Donation
 If you like this project, please in the upper right corner of the project "Star". Your support is my biggest encouragement! ^_^
 You can also donate:
