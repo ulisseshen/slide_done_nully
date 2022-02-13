@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:slide_done_ns/slide_done.dart';
+import 'package:slide_done_nully/slide_done.dart';
 
 void main() => runApp(MyApp());
 

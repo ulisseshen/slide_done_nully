@@ -1,4 +1,4 @@
-package com.example.slide_done.example_slide_done
+package com.example.android
 
 import io.flutter.embedding.android.FlutterActivity
 
