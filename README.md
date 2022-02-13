@@ -31,16 +31,16 @@ or bidirectional. You can customize the parameters of SlideDone to make it look 
 ```
 //github way
 dependencies:
-  slide_done_ns:
+  slide_done_nully:
     git:
       url: https://github.com/ulisseshen/flutter_slide_done_nullsafety.git
       ref: master
 ```
 #### 2.Add SlideDone to the layout file
 ```dart
-import 'package:slide_done_ns/slide_done.dart';
+import 'package:slide_done_nully/slide_done.dart';
 ....
-  GlobalKey<SlideDoneNSState> slideDoneKey = new GlobalKey<SlideDoneNSState>();
+  GlobalKey<SlideDoneNSState> slideDoneKey = GlobalKey<SlideDoneNSState>();
 ....
   SlideDoneNS(
     key: slideDoneKey,
@@ -73,7 +73,7 @@ You can also donate:
  
 MIT License
 
-Copyright (c) 2k22 ulisseshen
+Copyright (c) 2018 xuelongqy
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
