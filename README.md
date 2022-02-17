@@ -1,10 +1,12 @@
 # flutter_slide_done with null safety
 
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](/LICENSE)
-[![Awesome Flutter](https://img.shields.io/badge/Awesome-Flutter-blue.svg?longCache=true&style=flat-square)](https://stackoverflow.com/questions/tagged/flutter?sort=votes)
-
 Credits to [xuelongqy](https://github.com/xuelongqy/flutter_slide_done)
 
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](/LICENSE)
+[![Awesome Flutter](https://img.shields.io/badge/Awesome-Flutter-blue.svg?longCache=true&style=flat-square)](https://stackoverflow.com/questions/tagged/flutter?sort=votes)
+[![Pub](https://img.shields.io/badge/pub-v0.0.1-orange.svg)](https://pub.dartlang.org/packages/flutter_slide_done)
+
+## English Version
 SlideDone is inspired by sliding unlocking, which can be defined as a slide switch that can be unidirectional 
 or bidirectional. You can customize the parameters of SlideDone to make it look what you want.
 
@@ -33,7 +35,7 @@ or bidirectional. You can customize the parameters of SlideDone to make it look 
 dependencies:
   slide_done_nully:
     git:
-      url: https://github.com/ulisseshen/flutter_slide_done_nullsafety.git
+      url: https://github.com/ulisseshen/slide_done_nully.git
       ref: master
 
 // package way
@@ -79,12 +81,18 @@ import 'package:slide_done_nully/slide_done.dart';
 ```
 
 # Donation
-If you like this project, please in the upper right corner of the project "Star". Your support is my biggest encouragement! ^_^
-You can also donate:
+If you like my project, please in the upper right corner of the project "Star". Your support is my biggest encouragement! ^_^
+You can also scan the qr code below or [![Donate to this project using Paypal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=334PPRBZTY3J8&source=url), donation to Author.
 
-[![Donate to this project using Pagseguro](https://stc.pagseguro.uol.com.br/public/img/botoes/doacoes/84x35-doar-azul.gif)](https://pag.ae/7XX9rYL66)
-[![Donate to this project using Paypal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.com/donate/?hosted_button_id=XZ7WCJCCXV6HL)
+![](https://raw.githubusercontent.com/xuelongqy/donation/master/pay_alipay.jpg?raw=true) ![](https://raw.githubusercontent.com/xuelongqy/donation/master/pay_wxpay.jpg?raw=true) ![](https://raw.githubusercontent.com/xuelongqy/donation/master/pay_tencent.jpg?raw=true)
 
+If in donation message note name, will be record to the list if you are making open source authors, donation can leave when making project address or personal home page, a link will be added to the list have the effect of promoting each other
+(https://github.com/xuelongqy/donation/blob/master/DONATIONLIST.md)
+
+### QQ Group - 554981921
+#### Into the group of instructions
+The group is not only solve the problem of SlideDone, any Flutter related issues can be discussed.
+Just as its name, craigslist, as long as there is time, group of Lord will help you solve problems together.
 
 ## Open source licenses
  
