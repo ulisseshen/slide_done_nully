@@ -4,7 +4,7 @@ Credits to [xuelongqy](https://github.com/xuelongqy/flutter_slide_done)
 
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](/LICENSE)
 [![Awesome Flutter](https://img.shields.io/badge/Awesome-Flutter-blue.svg?longCache=true&style=flat-square)](https://stackoverflow.com/questions/tagged/flutter?sort=votes)
-[![Pub](https://img.shields.io/badge/pub-v0.0.1-orange.svg)](https://pub.dartlang.org/packages/flutter_slide_done)
+[![Pub](https://img.shields.io/badge/pub-v0.0.1-orange.svg)](https://pub.dartlang.org/packages/slide_done_nully)
 
 ## English Version
 SlideDone is inspired by sliding unlocking, which can be defined as a slide switch that can be unidirectional 
